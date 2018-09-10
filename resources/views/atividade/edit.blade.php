@@ -1,7 +1,7 @@
 <h1>Formulário de Edição da Atividade código {{$atividade->id}}</h1>
 <hr>
 
-  <!-- EXIBE MENSAGENS DE ERROS -->
+
   @if ($errors->any())
 	<div class="container">
 	  <div class="alert alert-danger">

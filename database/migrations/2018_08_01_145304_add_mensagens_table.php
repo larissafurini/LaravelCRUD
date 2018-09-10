@@ -14,11 +14,11 @@ class AddMensagensTable extends Migration
     public function up()
     {
         Schema::create('mensagens', function (Blueprint $table) {
-            $table->increments('id');   //código identificador
-            $table->string('titulo');   //título da mensagem
-            $table->string('texto');    //texto da mensagem
-            $table->string('autor');    //autor da mensagem
-            $table->timestamps();       //registro created_at e updated_at
+            $table->increments('id');   
+            $table->string('titulo');   
+            $table->string('texto');    
+            $table->string('autor');   
+            $table->timestamps();      
         });
     }
 

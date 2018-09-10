@@ -7,4 +7,3 @@
 <h3><b>Atualizada em:</b> {{$atividade->updated_at}}</h3>
 
 
-<!-- \Carbon\Carbon::parse($atividade->scheduledto)->format('d/m/Y h:m')  -->

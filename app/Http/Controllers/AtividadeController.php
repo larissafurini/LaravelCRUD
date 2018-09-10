@@ -37,33 +37,31 @@ class AtividadeController extends Controller
      */
     public function store(Request $request)
     {
-        //faço as validações dos campos
-
-        //vetor com as mensagens de erro
+       
         $messages = array(
             'title.required' => 'É obrigatório um título para a atividade',
             'description.required' => 'É obrigatória uma descrição para a atividade',
             'scheduledto.required' => 'É obrigatório o cadastro da data/hora da atividade',
         );
 
-        //vetor com as especificações de validações
+        
         $regras = array(
             'title' => 'required|string|max:255',
             'description' => 'required',
             'scheduledto' => 'required|string',
         );
 
-        //cria o objeto com as regras de validação
+        
         $validador = Validator::make($request->all(), $regras, $messages);
 
-        //executa as validações
+        
         if ($validador->fails()) {
             return redirect('atividades/create')
             ->withErrors($validador)
             ->withInput($request->all);
         }
 
-        //se passou pelas validações, processa e salva no banco...
+        
         $obj_Atividade = new Atividade();
         $obj_Atividade->title =       $request['title'];
         $obj_Atividade->description = $request['description'];
@@ -88,7 +86,7 @@ class AtividadeController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Atividade  $atividade
+     * @param  
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -106,40 +104,40 @@ class AtividadeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //faço as validações dos campos
+        
 
-        //vetor com as mensagens de erro
+        
         $messages = array(
-            'title.required' => 'É obrigatório um título para a atividade',
-            'description.required' => 'É obrigatória uma descrição para a atividade',
+            'title.required' => 'É obrigatório um título da atividade',
+            'description.required' => 'É obrigatória uma a descrição da atividade',
             'scheduledto.required' => 'É obrigatório o cadastro da data/hora da atividade',
         );
 
-        //vetor com as especificações de validações
+        
         $regras = array(
             'title' => 'required|string|max:255',
             'description' => 'required',
             'scheduledto' => 'required|string',
         );
 
-        //cria o objeto com as regras de validação
+        
         $validador = Validator::make($request->all(), $regras, $messages);
 
-        //executa as validações
+        
         if ($validador->fails()) {
             return redirect('atividades/$id/edit')
             ->withErrors($validador)
             ->withInput($request->all);
         }
 
-        //se passou pelas validações, processa e salva no banco...
+        
         $obj_atividade = Atividade::findOrFail($id);
         $obj_atividade->title =       $request['title'];
         $obj_atividade->description = $request['description'];
         $obj_atividade->scheduledto = $request['scheduledto'];
         $obj_atividade->save();
 
-        return redirect('/atividades')->with('success', 'Atividade alterada com sucesso!!');
+        return redirect('/atividades')->with('success', 'Atividade alterada!!');
     }
 
     /**
@@ -165,6 +163,6 @@ class AtividadeController extends Controller
     {
         $obj_atividade = Atividade::findOrFail($id);
         $obj_atividade->delete($id);
-        return redirect('/atividades')->with('sucess','Atividade excluída com Sucesso!!');
+        return redirect('/atividades')->with('sucess','Atividade excluída!!');
     }
 }

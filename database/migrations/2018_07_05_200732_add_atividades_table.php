@@ -14,11 +14,11 @@ class AddAtividadesTable extends Migration
     public function up()
     {
         Schema::create('atividades', function (Blueprint $table) {
-            $table->increments('id');           //código identificador
-            $table->string('title');            //título da atividade
-            $table->string('description');      //descrição da atividade
-            $table->dateTime('scheduledto');    //agendado para
-            $table->timestamps();               //registro created_at e updated_at
+            $table->increments('id');          
+            $table->string('title');            
+            $table->string('description');      
+            $table->dateTime('scheduledto');    
+            $table->timestamps();               
         });
     }
 

@@ -13,15 +13,15 @@ class atividadesTableSeeder extends Seeder
     public function run()
     {
         Atividade::create([
-            'title' => 'Prova de Matemática',
-            'description' => 'Prova sobre números imaginários',
-            'scheduledto' => '2018-09-01 13:15:00'
+            'title' => 'Trabalho de Banco de dados',
+            'description' => 'apresentar o sistema de uma determinada empresa',
+            'scheduledto' => '2018-05-05 10:30:00'
         ]);
 
         Atividade::create([
-            'title' => 'Desenvolver o trabalho de Tópicos Especiais',
-            'description' => 'Implementar o trabalho final da disciplina',
-            'scheduledto' => '2018-10-01 13:15:00'
+            'title' => 'Prova de Quimica',
+            'description' => 'Sobre quimica organica e suas funcoes',
+            'scheduledto' => '2018-06-09 11:20:00'
         ]);
 
     }

@@ -1,7 +1,7 @@
 <h1>Formulário de Cadastro de Atividade</h1>
 <hr>
 
-  <!-- EXIBE MENSAGENS DE ERROS -->
+  
   @if ($errors->any())
 	<div class="container">
 	  <div class="alert alert-danger">

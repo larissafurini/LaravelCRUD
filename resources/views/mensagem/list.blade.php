@@ -9,4 +9,3 @@
 
 
 
-<!-- \Carbon\Carbon::parse($atividade->scheduledto)->format('d/m/Y h:m')  -->
