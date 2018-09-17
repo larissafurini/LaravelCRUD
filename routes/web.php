@@ -19,3 +19,7 @@ Route::delete('/atividades/{id}', 'AtividadeController@destroy');
 Route::get('/mensagens', 'MensagemController@index');
 Route::get('/mensagens/{id}', 'MensagemController@show');
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
