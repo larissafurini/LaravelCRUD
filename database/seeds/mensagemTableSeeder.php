@@ -16,12 +16,16 @@ class mensagemTableSeeder extends Seeder
             'titulo' => 'Olá',
             'texto' => 'Say Hi',
             'autor' => 'Larissa'
+            'user_id' => 1;
+            'atividade_id' => 1;
         ]);
 
         Mensagem::create([
             'titulo' => 'Olá',
             'texto' => 'Say Bye',
             'autor' => 'Fernanda'
+            'user_id' => 1;
+            'atividade_id' => 1;
         ]);
     }
 }

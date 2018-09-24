@@ -17,11 +17,17 @@ class AddMensagensTable extends Migration
             $table->increments('id');   
             $table->string('titulo');   
             $table->string('texto');    
-            $table->string('autor');   
+            $table->string('autor');  
+            $table->integer('user_id') ->unsigned();
+            $table->integer('atividade_id')->usigned();
             $table->timestamps();      
         });
     }
+        Schema::table('mensagens', function($table){
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('atividade_id')->references('id')->on('atividades')
 
+        });
     /**
      * Reverse the migrations.
      *
