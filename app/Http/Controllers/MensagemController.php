@@ -25,7 +25,8 @@ class MensagemController extends Controller
      */
     public function create()
     {
-        //
+        $atividades = Atividade::all();
+        return view ('mensagem.create',['atividades' = $atividades]);
     }
 
     /**
